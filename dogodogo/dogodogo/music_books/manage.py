@@ -20,5 +20,6 @@ def main():
 
 if __name__ == '__main__':
     print("commit success!!!!!!") #################無理やり追加####################
+    print("DOGODOGO")
     main()
 
