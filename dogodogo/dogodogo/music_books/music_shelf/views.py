@@ -28,10 +28,13 @@ def user_login(request):  # Changed from def login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('login_success')  # Changed from return redirect('frontpage')
+            return redirect('user_page', username=user.username)  # Redirect to user-specific page
     else:
         form = AuthenticationForm()
     return render(request, 'music/login.html', {'form': form})
 
 def login_success(request):
     return render(request, 'music/login_success.html')
+
+def user_page(request, username):
+    return render(request, 'music/user_page.html', {'username': username})
