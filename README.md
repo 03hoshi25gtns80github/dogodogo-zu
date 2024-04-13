@@ -8,6 +8,12 @@ docker run -it --name dogodogo-zu -v C:\Users\03hos\Documents\benkyo\dogodogo-zu
 コマンド ➂：二回目以降のコンテナの起動
 docker start -ai dogodogo-zu
 
+
+
 ### soratest
 
 otameshi
+
+### matsumototest
+
+otamesi
