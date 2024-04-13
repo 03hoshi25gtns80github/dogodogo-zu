@@ -1,0 +1,15 @@
+{% extends 'music_shelf/base.html' %}
+
+{% block header %}
+<h1>詳細</h1>
+{% endblock header %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <a href = {{task.url}}>{{task.title}}</a>
+        <p><small class="text-muted">{{task.artist}}</small></p>
+    </div>
+</div>
+<a class="btn btn-outline-secondary mt-2" href="{% url 'list' %}" role="button">戻る</a>
+{% endblock content %}
