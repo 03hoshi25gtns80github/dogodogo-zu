@@ -1,7 +1,7 @@
 {% extends 'music/base.html' %} {% block content %}
-<h2>ユーザー登録</h2>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">ログイン</button>
-</form>
+<h2>新規ユーザー</h2>
+<a href="{% url 'signup' %}" class="btn">サインアップ</a>
+
+<h2>登録済みユーザー</h2>
+<a href="{% url 'login' %}" class="btn">ログイン</a>
 {% endblock %}
