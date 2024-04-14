@@ -1,0 +1,7 @@
+{% extends 'music/base.html' %} {% block content %}
+<h2>新規ユーザー</h2>
+<a href="{% url 'signup' %}" class="btn">サインアップ</a>
+
+<h2>登録済みユーザー</h2>
+<a href="{% url 'login' %}" class="btn">ログイン</a>
+{% endblock %}

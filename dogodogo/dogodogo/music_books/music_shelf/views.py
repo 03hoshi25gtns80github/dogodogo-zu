@@ -37,8 +37,6 @@ def user_login(request):  # Changed from def login(request):
         form = AuthenticationForm()
     return render(request, 'music/login.html', {'form': form})
 
-def login_success(request):
-    return render(request, 'music/login_success.html')
 
 def user_page(request, username):
     return render(request, 'music/user_page.html', {'username': username})
@@ -56,14 +54,14 @@ class TodoDetail(DetailView):
 class TodoCreate(CreateView):
     model = Todo
     fields = "__all__"
-    success_url = reverse_lazy("list")
+    success_url = reverse_lazy("register")
 
 class TodoUpdate(UpdateView):
     model = Todo
     fields = "__all__"
-    success_url = reverse_lazy("list")
+    success_url = reverse_lazy("register")
 
 class TodoDelete(DeleteView):
     model = Todo
     context_object_name = "task"
-    success_url = reverse_lazy("list")
+    success_url = reverse_lazy("register")

@@ -1,8 +1,8 @@
-{% extends "music/base.html" %} {% block content %}
+{% extends 'music/base.html' %} {% block content %}
 <h2>ログイン成功！</h2>
 <p>ようこそ、{{ user.username }}さん！</p>
 
 <!-- 音楽登録ボタンを追加 -->
-<a href="{% url 'register' %}" class="btn btn-primary">音楽登録</a>
+<a href="{% url 'register' %}" class="btn">音楽登録</a>
 
 {% endblock %}
