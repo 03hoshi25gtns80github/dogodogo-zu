@@ -1,9 +1,12 @@
 <!-- login.html -->
-{% extends 'music/base.html' %} {% block content %}{% load static %}
+{% extends 'music/base.html' %}{% load static %} {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
-<h2>ログイン</h2>
+<div class="login">
+  <h2>ログイン</h2>
 <form method="post">
   {% csrf_token %} {{ form.as_p }}
   <button type="submit" class="a">ログイン</button>
 </form>
+</div>
+
 {% endblock %}

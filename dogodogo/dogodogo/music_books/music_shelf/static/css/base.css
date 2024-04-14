@@ -1,10 +1,45 @@
 @charset "utf-8";
 
+.jersey-10-regular {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 body{
-    
+    text-align: right;
+    background-image: url('../images/background1.avif');
+    background-size: cover;
+    background-position: center;
 }
 
 .container{
     text-align: center;
-    width: 200px;
+    display: flex; /* 要素をフレックスボックスとして配置する */
+    justify-content: center; 
+}
+strong{
+    font-size: 30px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: gray;
+    padding: 2px;
+}
+section{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    font-size: 180px;
+    font-family: 'Jersey 10', sans-serif;
+    margin: 100px;
+    text-shadow: 2px 2px 0.2px;
+}
+
+
+
+
+li{
+    text-align: left;
 }

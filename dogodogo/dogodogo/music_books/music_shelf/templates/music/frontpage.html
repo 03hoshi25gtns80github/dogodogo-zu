@@ -1,10 +1,11 @@
-{% extends 'music/base.html' %} {% block content %}{% load static %}
+{% extends 'music/base.html' %} {% load static %}{% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/frontpage.css' %}">
 <div class="newUser">
     <h2>新規ユーザー</h2>
     <a href="{% url 'signup' %}" class="btn">サインアップ</a>
 </div>
-
-<h2>登録済みユーザー</h2>
-<a href="{% url 'login' %}" class="btn">ログイン</a>
+<div class="usedUser">
+    <h2>登録済みユーザー</h2>
+    <a href="{% url 'login' %}" class="btn">ログイン</a>
+</div>
 {% endblock %}
