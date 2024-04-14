@@ -25,7 +25,7 @@ def upload_document(request):
         form = MusicForm()
     return render(request, 'music/addpage.html', {'form': form})
 
-    def frontpage(request):
+def frontpage(request):
     return render(request, "music/frontpage.html")
 
 def signup(request):

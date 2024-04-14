@@ -17,6 +17,9 @@ body{
     text-align: center;
     display: flex; /* 要素をフレックスボックスとして配置する */
     justify-content: center; 
+    position: absolute;
+    top: 70%;
+    left: 7%;
 }
 strong{
     font-size: 30px;
@@ -24,6 +27,8 @@ strong{
     border-radius: 3px;
     background-color: gray;
     padding: 2px;
+    position: absolute;
+    right: 1%;
 }
 section{
     text-align: center;
@@ -34,7 +39,10 @@ h1{
     font-size: 180px;
     font-family: 'Jersey 10', sans-serif;
     margin: 100px;
+    position: absolute;
+    left: 20%;
     text-shadow: 2px 2px 0.2px;
+
 }
 
 

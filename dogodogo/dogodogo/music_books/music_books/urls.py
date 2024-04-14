@@ -6,7 +6,7 @@ from music_shelf.views import shelfpage,upload_document
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('add/',upload_document),
-    path('shelf/',shelfpage)
+    path('shelf/',shelfpage),
     path("", frontpage, name='frontpage'),
     path('signup/', signup, name='signup'),
     path('login/', user_login, name='login'),
