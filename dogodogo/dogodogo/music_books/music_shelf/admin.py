@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Shelf_Post,Upload
 
-# Register your models here.
+admin.site.register(Shelf_Post)
+admin.site.register(Upload)

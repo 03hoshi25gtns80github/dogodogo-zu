@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from music_shelf.views import shelfpage,upload_document
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('add/',upload_document),
+    path('shelf/',shelfpage)
 ]

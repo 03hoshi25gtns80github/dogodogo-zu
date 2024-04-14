@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>musicshelf</title>
+    <style>
+        /* 本棚のスタイル */
+        .musicshelf {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* 本のスタイル */
+        .music {
+            width: 100px;
+            height: 150px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 600px) {
+            .music {
+                width: 80px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="musicshelf">
+        <!-- 本のタイトルを表示 -->
+        {% for post in posts%}
+        <div class="music"><p>{{post.name}}</p><a href="{{ post.music_url }}">{{ post.music_title }}</a></div>
+        {% endfor %}
+    </div>
+</body>
+</html>
