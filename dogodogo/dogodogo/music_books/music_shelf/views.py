@@ -6,7 +6,8 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Todo
+from .models import Todo, User
+from django.contrib.auth.models import User 
 
 
 def frontpage(request):
@@ -43,6 +44,24 @@ def login_success(request):
 def user_page(request, username):
     return render(request, 'music/user_page.html', {'username': username})
 
+
+class UserSearch(ListView):
+    model = User
+    template_name = 'music_shelf/user_search.html'
+
+    def get_queryset(self):
+        # 検索フォームが送信されたときに前回の検索結果をクリアする
+        self.object_list = None
+        query = super().get_queryset()
+        title = self.request.GET.get('title', None)
+        if title:
+            query = query.filter(username__icontains=title)
+        return query
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = self.request.GET.get('title', '')
+        return context
 
 class TodoList(ListView):
     model = Todo

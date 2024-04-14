@@ -1,6 +1,8 @@
 from django.contrib import admin
-from django.urls import path, include
-from music_shelf.views import frontpage,signup, user_login, login_success, user_page, TodoDetail, TodoList, TodoCreate, TodoUpdate, TodoDelete
+from django.urls import path
+from music_shelf.views import frontpage,signup, user_login, login_success, user_page, TodoDetail, TodoList, TodoCreate, TodoUpdate, TodoDelete, UserSearch
+
+app_name = 'User'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,5 +16,5 @@ urlpatterns = [
     path("create/", TodoCreate.as_view(), name="create"),
     path("update/<int:pk>", TodoUpdate.as_view(), name="update"),
     path("delete/<int:pk>", TodoDelete.as_view(), name="delete"),
-    #path("", include("music_shelf.urls")) 
+    path('user_search/', UserSearch.as_view(), name='user_search'),
 ]

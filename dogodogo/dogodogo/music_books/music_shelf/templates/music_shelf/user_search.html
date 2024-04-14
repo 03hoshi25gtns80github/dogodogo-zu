@@ -1,0 +1,27 @@
+{% extends "music_shelf/base.html" %}
+
+<!-- 検索窓機能 -->
+{% block title %}ユーザー検索{% endblock title %}
+{% block content %}
+<div class="container mt-3">
+    <h2 class="mt-5">Search</h2>
+    <form class="w-50" method="GET" action="{% url 'user_search' %}">
+        <!-- フィールドの名前を"title"に変更 -->
+        <p><input class="form-control" type="text" name="title" value="{{ title }}" placeholder="ユーザー名を入力"></p>
+        <p><input class="btn btn-secondary" type="submit" value="検索"></p>
+    </form>
+
+    {% for object in object_list %}
+        <div class="card my-3">
+            <div class="card-body">
+                <!-- ユーザー名の表示 -->
+                <h5 class="card-title">ユーザー名: <p>{{ object.username }}</p></h5>
+            </div>
+        </div>
+    {% endfor %}
+    
+    {% if not object_list %}
+        <p>該当するユーザーが見つかりませんでした。</p>
+    {% endif %}
+</div>
+{% endblock content %}

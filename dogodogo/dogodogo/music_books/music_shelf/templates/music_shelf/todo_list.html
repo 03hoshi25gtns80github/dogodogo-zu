@@ -1,8 +1,8 @@
 {% extends 'music_shelf/base.html' %}
 
 {% block header %}
-    <h1>Todo List</h1>
-    <p>今日のタスクを作成しましょう！</p>
+    <h1>My 本棚</h1>
+    <p>自分だけの本棚を作りましょう！</p>
     <a class="btn btn-primary" href="{% url 'create' %}">新規作成</a>
 {% endblock header %}
 
@@ -12,7 +12,7 @@
         <thead>
             <tr>
             <th scope="col">タイトル</th>
-            <th scope="col">締切日</th>
+            <th scope="col">アーティスト名</th>
             <th scope="col"></th>
             </tr>
         </thead>
@@ -20,7 +20,7 @@
         {% for task in tasks %}
         <tr>
             <td>{{ task.title }}</td>
-            <td>{{ task.deadline }}</td>
+            <td>{{ task.artist }}</td>
             <td>
                 <a href="{% url 'detail' task.pk %}">詳細</a>
                 <a href="{% url 'update' task.pk %}">編集</a>
