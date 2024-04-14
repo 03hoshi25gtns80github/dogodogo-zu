@@ -10,6 +10,7 @@ class SignUpForm(UserCreationForm):
 
 # Create your models here.
 class Todo(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     url = models.CharField("URL", max_length=50)
     title = models.CharField("タイトル", max_length = 50)
     artist = models.CharField("アーティスト名", max_length = 50)

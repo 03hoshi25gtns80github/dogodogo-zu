@@ -7,6 +7,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Todo
+from .forms import TodoForm
 
 
 def frontpage(request):
@@ -46,15 +47,18 @@ class TodoList(ListView):
     model = Todo
     context_object_name = "tasks"
 
-
 class TodoDetail(DetailView):
     model = Todo
     context_object_name = "task"
 
 class TodoCreate(CreateView):
     model = Todo
-    fields = "__all__"
+    form_class = TodoForm
     success_url = reverse_lazy("register")
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class TodoUpdate(UpdateView):
     model = Todo
