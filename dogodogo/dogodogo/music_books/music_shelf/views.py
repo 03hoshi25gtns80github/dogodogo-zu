@@ -7,9 +7,25 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Todo
+from django.shortcuts import render,redirect
+from .models import Shelf_Post
+from .form import MusicForm
 
+def shelfpage(request):
+    posts=Shelf_Post.objects.all()
+    return render(request,"music/shelfpage.html",{"posts":posts})
 
-def frontpage(request):
+def upload_document(request):
+    if request.method == 'POST':
+        form = MusicForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('upload_success')  # アップロード成功時のページにリダイレクト
+    else:
+        form = MusicForm()
+    return render(request, 'music/addpage.html', {'form': form})
+
+    def frontpage(request):
     return render(request, "music/frontpage.html")
 
 def signup(request):
@@ -67,3 +83,5 @@ class TodoDelete(DeleteView):
     model = Todo
     context_object_name = "task"
     success_url = reverse_lazy("list")
+
+# Create your views here.

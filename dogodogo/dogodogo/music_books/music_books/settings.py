@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'music_shelf',
-    #'music_shelf.apps.MusicShelfConfig',
+    'music_shelf'
 ]
 
 MIDDLEWARE = [

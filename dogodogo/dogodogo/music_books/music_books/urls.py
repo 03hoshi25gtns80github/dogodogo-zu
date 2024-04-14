@@ -1,9 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include
 from music_shelf.views import frontpage,signup, user_login, login_success, user_page, TodoDetail, TodoList, TodoCreate, TodoUpdate, TodoDelete
+from music_shelf.views import shelfpage,upload_document
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('add/',upload_document),
+    path('shelf/',shelfpage)
     path("", frontpage, name='frontpage'),
     path('signup/', signup, name='signup'),
     path('login/', user_login, name='login'),
